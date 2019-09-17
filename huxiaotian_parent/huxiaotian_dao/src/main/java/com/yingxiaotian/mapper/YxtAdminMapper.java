@@ -1,0 +1,31 @@
+package com.yingxiaotian.mapper;
+
+import com.huxiaotian.pojo.YxtAdmin;
+import com.huxiaotian.pojo.YxtAdminExample;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
+public interface YxtAdminMapper {
+    long countByExample(YxtAdminExample example);
+
+    int deleteByExample(YxtAdminExample example);
+
+    int deleteByPrimaryKey(String username);
+
+    int insert(YxtAdmin record);
+
+    int insertSelective(YxtAdmin record);
+
+    List<YxtAdmin> selectByExample(YxtAdminExample example);
+
+    YxtAdmin selectByPrimaryKey(String username);
+
+    int updateByExampleSelective(@Param("record") YxtAdmin record, @Param("example") YxtAdminExample example);
+
+    int updateByExample(@Param("record") YxtAdmin record, @Param("example") YxtAdminExample example);
+
+    int updateByPrimaryKeySelective(YxtAdmin record);
+
+    int updateByPrimaryKey(YxtAdmin record);
+}

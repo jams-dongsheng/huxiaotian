@@ -7,11 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="huxiaotian_dao" />
+        <module name="huxiaotian_manager_web" />
         <module name="huxiaotian_pojo" />
+        <module name="huxiaotian_admin_interface" />
+        <module name="huxiaotian_admin_service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="huxiaotian_admin_interface" target="1.8" />
+      <module name="huxiaotian_admin_service" target="1.8" />
       <module name="huxiaotian_dao" target="1.8" />
+      <module name="huxiaotian_manager_web" target="1.8" />
       <module name="huxiaotian_parent" target="1.8" />
       <module name="huxiaotian_pojo" target="1.8" />
     </bytecodeTargetLevel>

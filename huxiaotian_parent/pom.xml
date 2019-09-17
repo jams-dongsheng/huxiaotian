@@ -10,6 +10,9 @@
     <modules>
         <module>huxiaotian_dao</module>
         <module>huxiaotian_pojo</module>
+        <module>huxiaotian_admin_interface</module>
+        <module>huxiaotian_admin_service</module>
+        <module>huxiaotian_manager_web</module>
     </modules>
     <packaging>pom</packaging>
     <!-- 集中定义依赖版本号 -->
