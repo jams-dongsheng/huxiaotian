@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian_dao/huxiaotian_dao.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian_dao/huxiaotian_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian_parent.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian_pojo/huxiaotian_pojo.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian_pojo/huxiaotian_pojo.iml" />
+    </modules>
+  </component>
+</project>
