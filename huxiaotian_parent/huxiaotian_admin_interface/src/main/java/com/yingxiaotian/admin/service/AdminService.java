@@ -1,10 +1,10 @@
-package com.huxiaotian.admin.service;
+package com.yingxiaotian.admin.service;
 
-import com.huxiaotian.pojo.YxtAdmin;
+import com.yingxiaotian.pojo.YxtAdmin;
 
 import java.util.List;
 
-public interface AdminService{
+public interface AdminService {
     /**
      * 返回全部列表
      * @return

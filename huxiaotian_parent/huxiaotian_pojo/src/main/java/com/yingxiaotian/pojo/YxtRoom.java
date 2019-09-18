@@ -1,4 +1,4 @@
-package com.huxiaotian.pojo;
+package com.yingxiaotian.pojo;
 
 public class YxtRoom {
     private String roomId;

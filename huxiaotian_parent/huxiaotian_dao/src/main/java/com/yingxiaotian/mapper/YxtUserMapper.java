@@ -1,7 +1,7 @@
 package com.yingxiaotian.mapper;
 
-import com.huxiaotian.pojo.YxtUser;
-import com.huxiaotian.pojo.YxtUserExample;
+import com.yingxiaotian.pojo.YxtUser;
+import com.yingxiaotian.pojo.YxtUserExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

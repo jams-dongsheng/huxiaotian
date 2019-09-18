@@ -1,4 +1,4 @@
-package com.huxiaotian.pojo;
+package com.yingxiaotian.pojo;
 
 import java.util.ArrayList;
 import java.util.List;

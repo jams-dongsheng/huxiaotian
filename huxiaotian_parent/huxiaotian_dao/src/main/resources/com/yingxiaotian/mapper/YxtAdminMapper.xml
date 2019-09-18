@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yingxiaotian.mapper.YxtAdminMapper">
-  <resultMap id="BaseResultMap" type="com.huxiaotian.pojo.YxtAdmin">
+  <resultMap id="BaseResultMap" type="com.yingxiaotian.pojo.YxtAdmin">
     <id column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="role" jdbcType="VARCHAR" property="role" />
@@ -67,7 +67,7 @@
   <sql id="Base_Column_List">
     username, password, role
   </sql>
-  <select id="selectByExample" parameterType="com.huxiaotian.pojo.YxtAdminExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.yingxiaotian.pojo.YxtAdminExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -91,19 +91,19 @@
     delete from hxt_admin
     where username = #{username,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.huxiaotian.pojo.YxtAdminExample">
+  <delete id="deleteByExample" parameterType="com.yingxiaotian.pojo.YxtAdminExample">
     delete from hxt_admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.huxiaotian.pojo.YxtAdmin">
+  <insert id="insert" parameterType="com.yingxiaotian.pojo.YxtAdmin">
     insert into hxt_admin (username, password, role
       )
     values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.huxiaotian.pojo.YxtAdmin">
+  <insert id="insertSelective" parameterType="com.yingxiaotian.pojo.YxtAdmin">
     insert into hxt_admin
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="username != null">
@@ -128,7 +128,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.huxiaotian.pojo.YxtAdminExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.yingxiaotian.pojo.YxtAdminExample" resultType="java.lang.Long">
     select count(*) from hxt_admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -160,7 +160,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.huxiaotian.pojo.YxtAdmin">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yingxiaotian.pojo.YxtAdmin">
     update hxt_admin
     <set>
       <if test="password != null">
@@ -172,7 +172,7 @@
     </set>
     where username = #{username,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.huxiaotian.pojo.YxtAdmin">
+  <update id="updateByPrimaryKey" parameterType="com.yingxiaotian.pojo.YxtAdmin">
     update hxt_admin
     set password = #{password,jdbcType=VARCHAR},
       role = #{role,jdbcType=VARCHAR}

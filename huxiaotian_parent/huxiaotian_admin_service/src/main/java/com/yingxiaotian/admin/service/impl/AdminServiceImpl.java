@@ -1,10 +1,11 @@
-package com.huxiaotian.admin.service.impl;
+package com.yingxiaotian.admin.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.huxiaotian.admin.service.AdminService;
 
+
+import com.yingxiaotian.admin.service.AdminService;
 import com.yingxiaotian.mapper.YxtAdminMapper;
-import com.huxiaotian.pojo.YxtAdmin;
+import com.yingxiaotian.pojo.YxtAdmin;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
