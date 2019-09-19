@@ -24,10 +24,12 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public void add(YxtAdmin yxtAdmin) {
 
+
     }
 
     @Override
     public void update(YxtAdmin yxtAdmin) {
+
 
     }
 
