@@ -12,4 +12,6 @@ public interface YxtRoomService {
 
 
     YxtRoom findOne(String roomId);
+
+    void update(YxtRoom yxtRoom);
 }

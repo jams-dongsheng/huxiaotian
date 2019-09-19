@@ -28,5 +28,10 @@ public class YxtRoomServiceImpl implements YxtRoomService {
     public YxtRoom findOne(String roomId) {
         return yxtRoomMapper.selectByPrimaryKey(roomId);
     }
+
+    @Override
+    public void update(YxtRoom yxtRoom) {
+        yxtRoomMapper.updateByPrimaryKey(yxtRoom);
+    }
 }
 

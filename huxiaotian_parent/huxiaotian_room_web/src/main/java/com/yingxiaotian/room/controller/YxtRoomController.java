@@ -54,4 +54,22 @@ public class YxtRoomController {
     public YxtRoom findOne(String roomId){
         return yxtRoomService.findOne(roomId);
     }
+
+
+
+    @RequestMapping("/update")
+    public Result update(@RequestBody YxtRoom yxtRoom){
+        YxtRoom yxtRoom1 = yxtRoomService.findOne(yxtRoom.getRoomId());
+
+        if (!yxtRoom1.equals(yxtRoom.getRoomId())){
+            return new Result(false,"非法操作");
+        }
+        try {
+            yxtRoomService.update(yxtRoom);
+            return new Result(true, "修改成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "修改失败");
+        }
+    }
 }
