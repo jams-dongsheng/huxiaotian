@@ -1,6 +1,8 @@
 package com.yingxiaotian.pojo;
 
-public class YxtAdmin {
+import java.io.Serializable;
+
+public class YxtAdmin implements Serializable {
     private String username;
 
     private String password;

@@ -1,11 +1,12 @@
 package com.yingxiaotian.pojo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class YxtUserExample {
+public class YxtUserExample implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;

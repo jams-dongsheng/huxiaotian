@@ -73,7 +73,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from hxt_admin
+    from yxt_admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -84,27 +84,27 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from hxt_admin
+        from yxt_admin
     where username = #{username,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from hxt_admin
+    delete from yxt_admin
     where username = #{username,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.yingxiaotian.pojo.YxtAdminExample">
-    delete from hxt_admin
+    delete from yxt_admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.yingxiaotian.pojo.YxtAdmin">
-    insert into hxt_admin (username, password, role
+    insert into yxt_admin (username, password, role
       )
     values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.yingxiaotian.pojo.YxtAdmin">
-    insert into hxt_admin
+    insert into yxt_admin
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="username != null">
         username,
@@ -129,13 +129,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.yingxiaotian.pojo.YxtAdminExample" resultType="java.lang.Long">
-    select count(*) from hxt_admin
+    select count(*) from yxt_admin
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update hxt_admin
+    update yxt_admin
     <set>
       <if test="record.username != null">
         username = #{record.username,jdbcType=VARCHAR},
@@ -152,7 +152,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update hxt_admin
+    update yxt_admin
     set username = #{record.username,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
       role = #{record.role,jdbcType=VARCHAR}
@@ -161,7 +161,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.yingxiaotian.pojo.YxtAdmin">
-    update hxt_admin
+    update yxt_admin
     <set>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
@@ -173,7 +173,7 @@
     where username = #{username,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.yingxiaotian.pojo.YxtAdmin">
-    update hxt_admin
+    update yxt_admin
     set password = #{password,jdbcType=VARCHAR},
       role = #{role,jdbcType=VARCHAR}
     where username = #{username,jdbcType=VARCHAR}

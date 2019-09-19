@@ -14,12 +14,6 @@
           <element id="module-output" name="huxiaotian_admin_service" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="huxiaotian_admin_interface-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="huxiaotian_admin_interface" />
-          </element>
-          <element id="archive" name="huxiaotian_pojo-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="huxiaotian_pojo" />
-          </element>
           <element id="archive" name="huxiaotian_dao-1.0-SNAPSHOT.jar">
             <element id="module-output" name="huxiaotian_dao" />
           </element>
@@ -30,6 +24,9 @@
           <element id="library" level="project" name="Maven: com.github.miemiedev:mybatis-paginator:1.2.15" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.32" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.9" />
+          <element id="archive" name="huxiaotian_pojo-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="huxiaotian_pojo" />
+          </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
@@ -59,6 +56,9 @@
           <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.1" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.28" />
           <element id="library" level="project" name="Maven: javassist:javassist:3.11.0.GA" />
+          <element id="archive" name="huxiaotian_admin_interface-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="huxiaotian_admin_interface" />
+          </element>
         </element>
       </element>
       <element id="directory" name="META-INF">

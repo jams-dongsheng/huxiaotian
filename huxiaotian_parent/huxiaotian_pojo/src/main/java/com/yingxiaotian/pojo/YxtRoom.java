@@ -1,6 +1,8 @@
 package com.yingxiaotian.pojo;
 
-public class YxtRoom {
+import java.io.Serializable;
+
+public class YxtRoom implements Serializable {
     private String roomId;
 
     private String roomType;
