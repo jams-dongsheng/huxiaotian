@@ -18,7 +18,10 @@
     <security:http pattern="/plugins/**" security="none"/>
     <security:http pattern="/login.html" security="none"/>
 
-
+    <!-- 引用dubbo 服务 -->
+    <dubbo:application name="huxiaotian-manager-web" />
+    <dubbo:registry address="zookeeper://192.168.25.129:2181"/>
+    <dubbo:annotation package="com.yingxiaotian.manager" />
 
     <!--配置页面拦截规则-->
     <security:http use-expressions="false">
@@ -41,7 +44,8 @@
          <!--   <security:password-encoder ref="passwordEncoder"/>-->
         </security:authentication-provider>
     </security:authentication-manager>
+
     <!--配置加密算法-->
   <!--  <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>-->
-    <bean id="adminServiceDetail" class="com.yingxiaotian.admin.AdminDetailServiceImpl"/>
+    <bean id="adminServiceDetail" class="com.yingxiaotian.manager.AdminDetailServiceImpl"/>
 </beans>

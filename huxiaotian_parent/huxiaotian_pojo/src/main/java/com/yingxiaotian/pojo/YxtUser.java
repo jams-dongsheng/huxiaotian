@@ -1,9 +1,10 @@
 package com.yingxiaotian.pojo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class YxtUser {
+public class YxtUser implements Serializable {
     private String userId;
 
     private String name;
