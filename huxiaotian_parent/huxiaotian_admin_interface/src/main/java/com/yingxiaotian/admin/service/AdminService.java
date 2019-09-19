@@ -1,15 +1,17 @@
 package com.yingxiaotian.admin.service;
 
+import com.yingxiaotian.pojo.PageResult;
 import com.yingxiaotian.pojo.YxtAdmin;
-
 import java.util.List;
-
 public interface AdminService {
     /**
      * 返回全部列表
      * @return
      */
     public List<YxtAdmin> findAll();
+
+
+    public PageResult findPage(int pageNum, int pageSize);
 
 
 
@@ -34,7 +36,6 @@ public interface AdminService {
 
     /**
      * 批量删除
-     * @param ids
      */
-    public void delete(Long[] ids);
+    public void delete(String userId);
 }
