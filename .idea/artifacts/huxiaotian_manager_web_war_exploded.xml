@@ -76,6 +76,7 @@
           <element id="archive" name="huxiaotian_admin_interface-1.0-SNAPSHOT.jar">
             <element id="module-output" name="huxiaotian_admin_interface" />
           </element>
+          <element id="library" level="project" name="Maven: javax.annotation:jsr250-api:1.0" />
           <element id="archive" name="huxiaotian_admin_interface-1.0-SNAPSHOT.jar">
             <element id="module-output" name="huxiaotian_admin_interface" />
           </element>

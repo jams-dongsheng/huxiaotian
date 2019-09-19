@@ -2,7 +2,6 @@ package com.yingxiaotian.manager;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.alibaba.dubbo.config.annotation.Service;
 import com.yingxiaotian.admin.service.AdminService;
 import com.yingxiaotian.pojo.YxtAdmin;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -3,6 +3,8 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian_admin_service" />
     <file type="web" url="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian_manager_web" />
+    <file type="web" url="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian_room_service" />
+    <file type="web" url="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian_room_web" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
