@@ -70,11 +70,11 @@
           <element id="library" level="project" name="Maven: xml-resolver:xml-resolver:1.2" />
           <element id="library" level="project" name="Maven: xalan:xalan:2.7.1" />
           <element id="library" level="project" name="Maven: xalan:serializer:2.7.1" />
-          <element id="archive" name="huxiaotian_pojo-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="huxiaotian_pojo" />
-          </element>
           <element id="archive" name="huxiaotian_admin_interface-1.0-SNAPSHOT.jar">
             <element id="module-output" name="huxiaotian_admin_interface" />
+          </element>
+          <element id="archive" name="huxiaotian_pojo-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="huxiaotian_pojo" />
           </element>
         </element>
       </element>
