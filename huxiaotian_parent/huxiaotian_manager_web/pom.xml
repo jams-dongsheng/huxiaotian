@@ -178,6 +178,11 @@
             <artifactId>huxiaotian_admin_interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>jsr250-api</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -188,7 +193,7 @@
                 <version>2.2</version>
                 <configuration>
                     <!-- 指定端口 -->
-                    <port>9104</port>
+                    <port>9018</port>
                     <!-- 请求路径 -->
                     <path>/</path>
                 </configuration>

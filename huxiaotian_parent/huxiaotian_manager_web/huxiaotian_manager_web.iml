@@ -89,5 +89,6 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: xalan:serializer:2.7.1" level="project" />
     <orderEntry type="module" module-name="huxiaotian_pojo" />
     <orderEntry type="module" module-name="huxiaotian_admin_interface" />
+    <orderEntry type="library" name="Maven: javax.annotation:jsr250-api:1.0" level="project" />
   </component>
 </module>
