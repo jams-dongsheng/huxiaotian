@@ -13,10 +13,11 @@
         <module>huxiaotian_admin_interface</module>
         <module>huxiaotian_admin_service</module>
         <module>huxiaotian_manager_web</module>
-        <module>huxiaotian_room_interface</module>
-        <module>huxiaotian_room_service</module>
-        <module>huxiaotian_room_web</module>
+        <module>huxiaotian-room-interface</module>
         <module>huxiaotian_common</module>
+        <module>huxiaotian-room-service</module>
+        <module>huxiaotian-user-interface</module>
+        <module>huxiaotian-user-service</module>
     </modules>
     <packaging>pom</packaging>
     <!-- 集中定义依赖版本号 -->
@@ -264,9 +265,6 @@
         </dependencies>
 
     </dependencyManagement>
-
-
-
     <build>
 
     <plugins>
