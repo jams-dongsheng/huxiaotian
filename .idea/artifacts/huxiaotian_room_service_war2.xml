@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="huxiaotian-room-service:war">
+    <output-path>$PROJECT_DIR$/huxiaotian_parent/huxiaotian-room-service/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>huxiaotian-room-service</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="huxiaotian-room-service-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="huxiaotian-room-service:war exploded" />
+    </root>
+  </artifact>
+</component>

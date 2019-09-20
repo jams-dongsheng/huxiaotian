@@ -16,15 +16,15 @@
     <!-- 分页组件开始 -->
 	<script src="../plugins/angularjs/pagination.js"></script>
 	<link rel="stylesheet" href="../plugins/angularjs/pagination.css">
+
 	<!-- 分页组件结束 -->
     
     
     <script type="text/javascript" src="../js/base_pagination.js">  </script>
-    <script type="text/javascript" src="../js/service/contentService.js">  </script>
+    <script type="text/javascript" src="../js/service/hotelRoomService.js">  </script>
     <script type="text/javascript" src="../js/service/uploadService.js">  </script>
-    <script type="text/javascript" src="../js/service/contentCategoryService.js">  </script>
     <script type="text/javascript" src="../js/controller/baseController.js">  </script>
-    <script type="text/javascript" src="../js/controller/contentController.js">  </script>
+    <script type="text/javascript" src="../js/controller/hotelRoomController.js">  </script>
     <style>
         .hotelcontainer{
             width: 1200px;
@@ -80,7 +80,7 @@
         }
     </style>
 </head>
-<body class="hold-transition skin-red sidebar-mini" ng-app="pinyougou" ng-controller="contentController" ng-init="findContentCategoryList()">
+<body class="hold-transition skin-red sidebar-mini" ng-app="yingxiaotian" ng-controller="hotelRoomController" ng-init="reloadList();">
   <!-- .box-body -->
                     <div class="box-header with-border" >
                         <img  src="../img1/9.png" height="55px" width="141px">
@@ -167,44 +167,12 @@
             </div>
         </div>
         <ul>
-            <li class="hotelbox">
-                <img src="../img1/1.jpg" alt="">
-                <p><strong>302(<span>空</span>)</strong></p>
-                <span>剩余时间</span>
+            <li class="hotelbox" ng-repeat="room in roomList">
+                <img src="{{room.roomPicture}}" alt="">
+                <p><strong>{{room.roomId}}(<span>{{room.status=='1'?'有客':'空'}}</span>)</strong></p>
+                <span >{{time[room.roomId]}}</span>
             </li>
-            <li class="hotelbox">
-                <img src="../img1/1.jpg" alt="">
-                <p><strong>302(<span>空</span>)</strong></p>
-                <span>剩余时间</span>
-            </li>
-            <li class="hotelbox">
-            <img src="../img1/1.jpg" alt="">
-            <p><strong>302(<span>空</span>)</strong></p>
-            <span>剩余时间</span>
-        </li>
-            <li class="hotelbox">
-            <img src="../img1/1.jpg" alt="">
-            <p><strong>302(<span>空</span>)</strong></p>
-            <span>剩余时间</span>
-        </li>
-            <li class="hotelbox">
-                <img src="../img1/1.jpg" alt="">
-                <p><strong>302(<span>空</span>)</strong></p>
-                <span>剩余时间</span>
-            </li>
-            <li class="hotelbox">
-                <img src="../img1/1.jpg" alt="">
-                <p><strong>302(<span>空</span>)</strong></p>
-                <span>剩余时间</span>
-            </li>
-            <li class="hotelbox">
-                <img src="../img1/1.jpg" alt="">
-                <p><strong>302(<span>空</span>)</strong></p>
-                <span>剩余时间</span>
-            </li>
-
-
-
+            <tm-pagination conf="paginationConf"></tm-pagination>
 
         </ul>
         <ul>
@@ -226,7 +194,7 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">编辑</h3>
+			<h3 id="myModalLabel">编辑</h3>{{yxtRoom}}
 		</div>
 		<div class="modal-body">	
 			 <table class="table table-bordered table-striped"  width="800px">			
@@ -236,7 +204,7 @@
 
                              <td>
 <!--                                 <select ng-model="entity.categoryId" ng-options="item.id as item.name for item in contentCategoryList" ></select>-->
-                                 <input  class="form-control" ng-model="entity.title" placeholder="房间编号" >
+                                 <input  class="form-control" ng-model="yxtRoom.roomId" placeholder="房间编号" >
                              </td>
 
                         </tr>		
@@ -246,11 +214,8 @@
 
                              <td>
 <!--                                 <input  class="form-control" ng-model="entity.title" placeholder="房间类型" >-->
-                                 <select>
-                                     <option>--请选择房间类型--</option>
-                                     <option>单人间</option>
-                                     <option>双人间</option>
-                                     <option>大床房</option>
+                                 <select ng-model="yxtRoom.roomType">{{yxtRoom.roomType}}
+                                     <option ng-repeat=" room in roomSelectss">{{room}}</option>
                                  </select>
                              </td>
 
@@ -259,7 +224,7 @@
                              
 <td>标准价格</td>
 
-                             <td><input  class="form-control" ng-model="entity.url" placeholder="标准价格" ></td>
+                             <td><input  class="form-control" ng-model="yxtRoom.roomPrice" placeholder="标准价格" ></td>
 
                         </tr>		
 		      	<tr>
@@ -268,7 +233,7 @@
                     <td>
                     <input type="file" id="file">
                     <button ng-click="uploadFile()">上传</button>
-                    <img alt="" src="{{entity.pic}}" width="200px" height="100px">
+                    <img alt="" src="{{yxtRoom.roomPicture}}" width="200px" height="100px">
                     </td>
 
                         </tr>		
@@ -276,14 +241,14 @@
                              
 <td>房间状态</td>
 
-                             <td><input type="checkbox" ng-model="entity.status" placeholder="状态"  ng-true-value="1" ng-false-value="0"></td>
+                             <td><input type="checkbox" ng-model="yxtRoom.roomStatus" placeholder="状态"  ng-true-value="1" ng-false-value="0"></td>
 
                         </tr>		
 		      	<tr>
                              
 <td>房间描述</td>
 
-                             <td><input  class="form-control" ng-model="entity.sortOrder" placeholder="排序" ></td>
+                             <td><input  class="form-control" ng-model="yxtRoom.roomIntroduce"></td>
 
                         </tr>		
 		  		      	

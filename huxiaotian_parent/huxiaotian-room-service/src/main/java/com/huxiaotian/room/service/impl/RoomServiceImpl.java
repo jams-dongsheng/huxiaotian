@@ -97,7 +97,7 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public PageResult findAllRoom(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
-        Page<Room> page = (Page<Room>)createAll();
+        Page<YxtRoom> page = (Page<YxtRoom>)YxtRoomMapper.selectByExample(null);
         return new PageResult(page.getTotal(),page.getResult());
     }
 

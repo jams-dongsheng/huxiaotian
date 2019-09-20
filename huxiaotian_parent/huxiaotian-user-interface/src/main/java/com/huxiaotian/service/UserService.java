@@ -39,4 +39,6 @@ public interface UserService {
      * @param roomId
      */
     public void updateStatusByUser(String roomId);
+
+    public YxtUser findTime(String roomId);
 }

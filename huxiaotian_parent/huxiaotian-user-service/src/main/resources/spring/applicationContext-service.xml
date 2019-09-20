@@ -10,7 +10,7 @@
 
     <dubbo:protocol name="dubbo" port="20883"></dubbo:protocol>
 	<dubbo:application name="huxiaotian-user-service"/>
-    <dubbo:registry address="zookeeper://192.168.25.128:2181"/>
+    <dubbo:registry address="zookeeper://192.168.25.129:2181"/>
     <dubbo:annotation package="com.huxiaotian.user.service.impl" />
 
 	<bean id="idWorker" class="com.huxiaotian.util.IdWorker">

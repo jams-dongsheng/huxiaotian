@@ -137,4 +137,17 @@ public class UserServiceImpl implements UserService {
         yxtUser.setUserStatus("1");
         yxtUserMapper.updateByPrimaryKey(yxtUser);
     }
+
+    @Override
+    public YxtUser findTime(String roomId) {
+        YxtUserExample example = new YxtUserExample();
+        YxtUserExample.Criteria criteria = example.createCriteria();
+        criteria.andUserRoomIdEqualTo(roomId);
+        criteria.andUserStatusEqualTo("0");
+        List<YxtUser> users = yxtUserMapper.selectByExample(example);
+        if (users==null || users.size() <= 0){
+            return null;
+        }
+        return users.get(0);
+    }
 }

@@ -122,4 +122,10 @@ public class UserController {
             return new Result(false,"退房失败");
         }
     }
+
+    @RequestMapping("/findTime")
+    public YxtUser findTime(String roomId){
+        YxtUser user = userService.findTime(roomId);
+        return user;
+    }
 }

@@ -1,8 +1,7 @@
 package com.yingxiaotian.controller;
 
 
-import entity.Result;
-import org.springframework.beans.factory.annotation.Value;
+import com.yingxiaotian.pojo.Result;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,9 +10,8 @@ import util.FastDFSClient;
 @RestController
 @RequestMapping("/upload")
 public class UploadController {
-	
-	@Value("${FILE_SERVER_URL}")
-	private String file_server_url;
+
+	private String file_server_url="http://192.168.25.133/";
 	
 	@RequestMapping("/uploadFile")
 	public Result uploadFile(MultipartFile file){

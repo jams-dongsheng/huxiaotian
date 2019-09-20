@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian-room-interface/huxiaotian-room-interface.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian-room-interface/huxiaotian-room-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian-room-interface/huxiaotian-room-interface.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian-room-interface/huxiaotian-room-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian-room-service/huxiaotian-room-service.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian-room-service/huxiaotian-room-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian-room-service/huxiaotian-room-service.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian-room-service/huxiaotian-room-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian-user-interface/huxiaotian-user-interface.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian-user-interface/huxiaotian-user-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian-user-interface/huxiaotian-user-interface.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian-user-interface/huxiaotian-user-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian-user-service/huxiaotian-user-service.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian-user-service/huxiaotian-user-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian-user-service/huxiaotian-user-service.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian-user-service/huxiaotian-user-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian_admin_interface/huxiaotian_admin_interface.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian_admin_interface/huxiaotian_admin_interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/huxiaotian_parent/huxiaotian_admin_service/huxiaotian_admin_service.iml" filepath="$PROJECT_DIR$/huxiaotian_parent/huxiaotian_admin_service/huxiaotian_admin_service.iml" />

@@ -2,8 +2,10 @@ package com.yingxiaotian.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.huxiaotian.service.RoomService;
+import com.yingxiaotian.entity.PageResult;
+import com.yingxiaotian.pojo.Result;
 import com.yingxiaotian.pojo.YxtRoom;
-import entity.Result;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +23,7 @@ public class YxtRoomController {
      * @return
      */
     @RequestMapping("/add")
+    @PreAuthorize("hasAnyRole('ROLE_SUPER')")
     public Result add(@RequestBody YxtRoom yxtRoom){
         String roomId = yxtRoom.getRoomId();
         if (roomService.findOne(roomId)==null){
@@ -41,6 +44,7 @@ public class YxtRoomController {
      * @return
      */
     @RequestMapping("/delete")
+    @PreAuthorize("hasAnyRole('ROLE_SUPER')")
     public Result delete(String roomId){
         try {
             roomService.delete(roomId);
@@ -58,6 +62,7 @@ public class YxtRoomController {
 
 
     @RequestMapping("/update")
+    @PreAuthorize("hasAnyRole('ROLE_SUPER')")
     public Result update(@RequestBody YxtRoom yxtRoom){
         YxtRoom yxtRoom1 = roomService.findOne(yxtRoom.getRoomId());
 
@@ -72,4 +77,12 @@ public class YxtRoomController {
             return new Result(false, "修改失败");
         }
     }
+
+    //分页查询
+    @RequestMapping("findPage")
+    @PreAuthorize("hasAnyRole('ROLE_SUPER')")
+    public PageResult findPage(int page, int rows){
+        return roomService.findAllRoom(page, rows);
+    }
+
 }

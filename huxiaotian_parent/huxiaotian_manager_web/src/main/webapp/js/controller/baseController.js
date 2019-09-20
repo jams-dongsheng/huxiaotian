@@ -10,7 +10,7 @@ app.controller("baseController",function ($scope) {
     };
 //刷新列表
     $scope.reloadList=function(){
-        $scope.search($scope.paginationConf.currentPage,$scope.paginationConf.itemsPerPage);
+        $scope.findPage($scope.paginationConf.currentPage,$scope.paginationConf.itemsPerPage);
     };
 
     //用户勾选复选框
