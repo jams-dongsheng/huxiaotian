@@ -51,10 +51,10 @@ public class AdminController {
     public Result add(@RequestBody YxtAdmin admin){
         try {
             adminService.add(admin);
-            return new Result(true,"增加角色成功");
+            return new Result(true,"添加管理员成功");
         } catch (Exception e) {
             e.printStackTrace();
-            return new Result(true,"增加角色失败");
+            return new Result(true,"添加管理员失败");
         }
     }
 
@@ -86,7 +86,7 @@ public class AdminController {
     //分页查询
     @RequestMapping("findPage")
     @PreAuthorize("hasAnyRole('ROLE_SUPER')")
-    public PageResult findPage(int page, int rows){
-        return adminService.findPage(page, rows);
+    public PageResult findPage(int page, int size){
+        return adminService.findPage(page, size);
     }
 }

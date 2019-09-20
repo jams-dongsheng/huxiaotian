@@ -8,7 +8,7 @@ app.controller("baseController",function ($scope) {
             $scope.reloadList();
         }
     };
-//刷新列表
+// //刷新列表
     $scope.reloadList=function(){
         $scope.findPage($scope.paginationConf.currentPage,$scope.paginationConf.itemsPerPage);
     };
@@ -35,6 +35,7 @@ app.controller("baseController",function ($scope) {
             value+=json[i][key];
         }
         return value;
+
     }
 });
 
