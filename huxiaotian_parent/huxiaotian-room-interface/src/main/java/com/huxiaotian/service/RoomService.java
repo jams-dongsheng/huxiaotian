@@ -3,6 +3,7 @@ package com.huxiaotian.service;
 
 import com.yingxiaotian.entity.PageResult;
 import com.yingxiaotian.entity.RoomNum;
+import com.yingxiaotian.pojo.YxtRoom;
 
 public interface RoomService {
 
@@ -37,4 +38,29 @@ public interface RoomService {
      * @return
      */
     public PageResult findAllRoom(int pageNum, int pageSize);
+
+    /**
+     * 添加房间
+     * @param yxtRoom
+     */
+    public void add(YxtRoom yxtRoom);
+
+    /**
+     * 删除房间
+     * @param roomId
+     */
+    public void delete(String roomId);
+
+    /**
+     * 回显
+     * @param roomId
+     * @return
+     */
+    public YxtRoom findOne(String roomId);
+
+    /**
+     * 修改房间
+     * @param yxtRoom
+     */
+    void update(YxtRoom yxtRoom);
 }

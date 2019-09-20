@@ -102,6 +102,43 @@ public class RoomServiceImpl implements RoomService {
     }
 
     /**
+     * 添加房间
+     * @param yxtRoom
+     */
+    @Override
+    public void add(YxtRoom yxtRoom) {
+        YxtRoomMapper.insert(yxtRoom);
+    }
+
+    /**
+     * 删除房间
+     * @param roomId
+     */
+    @Override
+    public void delete(String roomId) {
+        YxtRoomMapper.deleteByPrimaryKey(roomId);
+    }
+
+    /**
+     * 回显
+     * @param roomId
+     * @return
+     */
+    @Override
+    public YxtRoom findOne(String roomId) {
+        return YxtRoomMapper.selectByPrimaryKey(roomId);
+    }
+
+    /**
+     * 修改房间
+     * @param yxtRoom
+     */
+    @Override
+    public void update(YxtRoom yxtRoom) {
+        YxtRoomMapper.updateByPrimaryKey(yxtRoom);
+    }
+
+    /**
      * 封装返回对象
      * @return
      */

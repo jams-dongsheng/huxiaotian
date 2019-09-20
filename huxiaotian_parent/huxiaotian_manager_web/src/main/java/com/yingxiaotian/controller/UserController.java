@@ -1,4 +1,4 @@
-package com.huxiaotian.user.controller;
+package com.yingxiaotian.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.huxiaotian.service.RoomService;
