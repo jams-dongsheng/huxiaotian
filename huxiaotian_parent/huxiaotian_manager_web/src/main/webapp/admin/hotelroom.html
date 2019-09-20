@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>客房管理</title>
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+	<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js">  </script>
+    <!-- 分页组件开始 -->
+	<script src="../plugins/angularjs/pagination.js"></script>
+	<link rel="stylesheet" href="../plugins/angularjs/pagination.css">
+	<!-- 分页组件结束 -->
+    
+    
+    <script type="text/javascript" src="../js/base_pagination.js">  </script>
+    <script type="text/javascript" src="../js/service/contentService.js">  </script>
+    <script type="text/javascript" src="../js/service/uploadService.js">  </script>
+    <script type="text/javascript" src="../js/service/contentCategoryService.js">  </script>
+    <script type="text/javascript" src="../js/controller/baseController.js">  </script>
+    <script type="text/javascript" src="../js/controller/contentController.js">  </script>
+    <style>
+        .hotelcontainer{
+            width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+.hotelbox{
+    float: left;
+    width: 150px;
+    height: 200px;
+    list-style: none;
+    margin: 0 50px  60px   0;
+}
+        .hotelbox img{
+            width: 150px;
+            height: 200px;
+        }
+        .hotelbox{
+            font-size: 20px;
+            text-align: center;
+        }
+        .hotelbox p {
+            margin: 0;
+            line-height: 28px;
+        }
+        .hotelbox span {
+            font-size: 14px;
+        }
+        .hoteltotal{
+            position: absolute;
+            margin-top: -20px;
+            right: 10%;
+        }
+        .total{
+            float: left;
+            width: 200px;
+            line-height: 26px;
+        }
+        .hotelbtn{
+            float: right;
+            color: #fff;
+        }
+        .hotelbtn button {
+            width: 50px;
+            height: 26px;
+            background-color: skyblue;
+            border: 0;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-red sidebar-mini" ng-app="pinyougou" ng-controller="contentController" ng-init="findContentCategoryList()">
+  <!-- .box-body -->
+                    <div class="box-header with-border" >
+                        <img  src="../img1/9.png" height="55px" width="141px">
+<!--                        <h3 class="box-title">房间管理</h3>-->
+                        <div class="has-feedback">
+                        <input ng-model="searchEntity.goodsName" placeholder="请输入姓名或房间号">
+                        <button class="btn btn-default" ng-click="reloadList()">查询</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span style="padding-right: 20px">欢迎您  admin,分配 <a href="#">退出</a></span>
+                        </div>
+
+                    </div>
+
+<!--                    <div class="box-body">-->
+
+<!--                        &lt;!&ndash; 数据表格 &ndash;&gt;-->
+<!--                        <div class="table-box">-->
+
+<!--                            &lt;!&ndash;工具栏&ndash;&gt;-->
+<!--                            <div class="pull-left">-->
+<!--                                <div class="form-group form-inline">-->
+<!--                                    <div class="btn-group">-->
+<!--                                        <button type="button" class="btn btn-default" title="新建" data-toggle="modal" data-target="#editModal" ng-click="entity={}"><i class="fa fa-file-o"></i> 新建</button>-->
+<!--                                        <button type="button" class="btn btn-default" title="删除" ng-click="dele()"><i class="fa fa-trash-o"></i> 删除</button>           -->
+<!--                                        <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i class="fa fa-refresh"></i> 刷新</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="box-tools pull-right">-->
+<!--                                <div class="has-feedback">							       -->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash;工具栏/&ndash;&gt;-->
+
+<!--			                  &lt;!&ndash;数据列表&ndash;&gt;-->
+<!--			                  <table id="dataList" class="table table-bordered table-striped table-hover dataTable">-->
+<!--			                      <thead>-->
+<!--			                          <tr>-->
+<!--			                              <th class="" style="padding-right:0px">-->
+<!--			                                  <input id="selall" type="checkbox" class="icheckbox_square-blue">-->
+<!--			                              </th>-->
+<!--                             <th class="sorting">房间编号</th>-->
+<!--                             <th class="sorting">房间类型</th>-->
+<!--                             <th class="sorting">标准价格</th>-->
+<!--                             <th class="sorting">房间图片</th>-->
+<!--                             <th class="sorting">房间状态</th>-->
+<!--                                          <th class="sorting">房间描述</th>-->
+<!--					                      <th class="text-center">操作</th>-->
+<!--			                          </tr>-->
+<!--			                      </thead>-->
+<!--			                      <tbody>-->
+<!--			                          <tr ng-repeat="entity in list">-->
+<!--			                              <td><input  type="checkbox" ng-click="updateSelection($event,entity.id)" ></td>-->
+<!--                                            <td>{{entity.categoryId}}</td>-->
+<!--                                             <td>{{entity.title}}</td>-->
+<!--                                             <td>{{entity.url}}</td>-->
+<!--                                             <td><img alt="" src="{{entity.pic}}" height="100px" width="100px"></td>-->
+<!--                                            <td>{{entity.status}}</td>-->
+<!--                                            <td></td>-->
+<!--		                                  <td class="text-center">                                           -->
+<!--		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" ng-click="findOne(entity.id)" >修改</button>                                           -->
+<!--		                                  </td>-->
+<!--			                          </tr>									 -->
+<!--			                      </tbody>-->
+<!--			                  </table>-->
+<!--			                  &lt;!&ndash;数据列表/&ndash;&gt;                        -->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; 数据表格 /&ndash;&gt;-->
+<!--                        &lt;!&ndash; 分页 &ndash;&gt;-->
+<!--						<tm-pagination conf="paginationConf"></tm-pagination>-->
+<!--                     </div>-->
+                    <!-- /.box-body -->
+
+    <div class="hotelcontainer">
+        <!--  酒店数量统计-->
+
+        <div class="hoteltotal">
+            <div class="total">
+                <p>共16间，入住8间，剩余8间</p>
+            </div>
+            <div class="hotelbtn">
+                <button>空房</button>
+                <button>全部</button>
+            </div>
+        </div>
+        <ul>
+            <li class="hotelbox">
+                <img src="../img1/1.jpg" alt="">
+                <p><strong>302(<span>空</span>)</strong></p>
+                <span>剩余时间</span>
+            </li>
+            <li class="hotelbox">
+                <img src="../img1/1.jpg" alt="">
+                <p><strong>302(<span>空</span>)</strong></p>
+                <span>剩余时间</span>
+            </li>
+            <li class="hotelbox">
+            <img src="../img1/1.jpg" alt="">
+            <p><strong>302(<span>空</span>)</strong></p>
+            <span>剩余时间</span>
+        </li>
+            <li class="hotelbox">
+            <img src="../img1/1.jpg" alt="">
+            <p><strong>302(<span>空</span>)</strong></p>
+            <span>剩余时间</span>
+        </li>
+            <li class="hotelbox">
+                <img src="../img1/1.jpg" alt="">
+                <p><strong>302(<span>空</span>)</strong></p>
+                <span>剩余时间</span>
+            </li>
+            <li class="hotelbox">
+                <img src="../img1/1.jpg" alt="">
+                <p><strong>302(<span>空</span>)</strong></p>
+                <span>剩余时间</span>
+            </li>
+            <li class="hotelbox">
+                <img src="../img1/1.jpg" alt="">
+                <p><strong>302(<span>空</span>)</strong></p>
+                <span>剩余时间</span>
+            </li>
+
+
+
+
+        </ul>
+        <ul>
+            <li class="hotelbox">
+                <a href="javascript:;" data-toggle="modal" data-target="#editModal"> <img src="../img1/addbtn.png" alt=""></a>
+                <p><strong><a href="javascript:;" data-toggle="modal" data-target="#editModal">添加房间</a></strong></p>
+                <span>超级管理员可操作</span>
+            </li>
+        </ul>
+
+    </div>
+
+
+  <!-- 分页 -->
+
+<!-- 编辑窗口 -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">编辑</h3>
+		</div>
+		<div class="modal-body">	
+			 <table class="table table-bordered table-striped"  width="800px">			
+		      	  		      	<tr>
+                             
+<td>房间编号</td>
+
+                             <td>
+<!--                                 <select ng-model="entity.categoryId" ng-options="item.id as item.name for item in contentCategoryList" ></select>-->
+                                 <input  class="form-control" ng-model="entity.title" placeholder="房间编号" >
+                             </td>
+
+                        </tr>		
+		      	<tr>
+                             
+<td>房间类型</td>
+
+                             <td>
+<!--                                 <input  class="form-control" ng-model="entity.title" placeholder="房间类型" >-->
+                                 <select>
+                                     <option>--请选择房间类型--</option>
+                                     <option>单人间</option>
+                                     <option>双人间</option>
+                                     <option>大床房</option>
+                                 </select>
+                             </td>
+
+                        </tr>		
+		      	<tr>
+                             
+<td>标准价格</td>
+
+                             <td><input  class="form-control" ng-model="entity.url" placeholder="标准价格" ></td>
+
+                        </tr>		
+		      	<tr>
+                             
+<td>房间图片</td>
+                    <td>
+                    <input type="file" id="file">
+                    <button ng-click="uploadFile()">上传</button>
+                    <img alt="" src="{{entity.pic}}" width="200px" height="100px">
+                    </td>
+
+                        </tr>		
+		      	<tr>
+                             
+<td>房间状态</td>
+
+                             <td><input type="checkbox" ng-model="entity.status" placeholder="状态"  ng-true-value="1" ng-false-value="0"></td>
+
+                        </tr>		
+		      	<tr>
+                             
+<td>房间描述</td>
+
+                             <td><input  class="form-control" ng-model="entity.sortOrder" placeholder="排序" ></td>
+
+                        </tr>		
+		  		      	
+			 </table>				
+		</div>
+		<div class="modal-footer">						
+			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" ng-click="save()">保存</button>
+			<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
+		</div>
+	  </div>
+	</div>
+</div>
+   
+</body>
+</html>

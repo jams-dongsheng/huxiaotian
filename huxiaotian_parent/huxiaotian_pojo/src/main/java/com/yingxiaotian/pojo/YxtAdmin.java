@@ -9,6 +9,8 @@ public class YxtAdmin implements Serializable {
 
     private String role;
 
+    private String name;
+
     public String getUsername() {
         return username;
     }
@@ -31,5 +33,13 @@ public class YxtAdmin implements Serializable {
 
     public void setRole(String role) {
         this.role = role == null ? null : role.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 }

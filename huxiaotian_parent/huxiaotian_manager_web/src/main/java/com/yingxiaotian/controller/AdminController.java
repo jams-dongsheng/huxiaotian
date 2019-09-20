@@ -14,21 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/user")
 public class AdminController {
 
     @Reference
     private AdminService adminService;
 
     //获取登录的用户名
-    @RequestMapping("getUsername")
+    @RequestMapping("/getUsername")
     public String getUsername(){
        return SecurityContextHolder.getContext().getAuthentication().getName();
     }
 
     //检查登录输入框
-    @RequestMapping("loginCheck")
-    public Result loginCheck(YxtAdmin admin){
+    @RequestMapping("/loginCheck")
+    public Result loginCheck(@RequestBody YxtAdmin admin){
         //根据用户名在数据库中进行查询
         YxtAdmin yxtAdmin = adminService.findOne(admin.getUsername());
         if (yxtAdmin==null){
@@ -46,7 +46,7 @@ public class AdminController {
 
     }
     //增加普通管理员
-    @RequestMapping("add")
+    @RequestMapping("/add")
     @PreAuthorize("hasAnyRole('ROLE_SUPER')")
     public Result add(@RequestBody YxtAdmin admin){
         try {
@@ -59,7 +59,7 @@ public class AdminController {
     }
 
     //删除普通管理员
-    @RequestMapping("delete")
+    @RequestMapping("/delete")
     @PreAuthorize("hasAnyRole('ROLE_SUPER')")
     public Result delete(String userID){
         try {
@@ -72,7 +72,7 @@ public class AdminController {
     }
 
     //查询所有普通管理员
-    @RequestMapping("findAllNormal")
+    @RequestMapping("/findAllNormal")
     @PreAuthorize("hasAnyRole('ROLE_SUPER')")
     public List<YxtAdmin> findAllNormal(){
         try {

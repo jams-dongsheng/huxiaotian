@@ -11,7 +11,7 @@
         	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
         		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:property-placeholder location="classpath:config/application.properties" />
+
 
 	<mvc:annotation-driven>
 	  <mvc:message-converters register-defaults="true">
@@ -40,8 +40,8 @@
 	/>
 	<aop:aspectj-autoproxy/>
 
-	<dubbo:application name="huxiaotian-manager-web" />
+	<dubbo:application name="huxiaotian_manager_web" />
 	<dubbo:registry address="zookeeper://192.168.25.129:2181"/>
-	<dubbo:annotation package="com.yingxiaotian" />
+	<dubbo:annotation package="com.yingxiaotian.controller" />
 
 </beans>

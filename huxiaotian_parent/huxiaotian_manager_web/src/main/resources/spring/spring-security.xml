@@ -22,10 +22,6 @@
     <security:http pattern="/login.html" security="none"/>
     <security:http pattern="/admin/loginCheck.do" security="none"/>
 
-    <!-- 引用dubbo 服务 -->
-    <dubbo:application name="huxiaotian-manager-web" />
-    <dubbo:registry address="zookeeper://192.168.25.129:2181"/>
-    <dubbo:annotation package="com.yingxiaotian" />
 
     <!--配置页面拦截规则-->
     <security:http use-expressions="false">
@@ -33,8 +29,8 @@
         <security:intercept-url pattern="/*.html" access="ROLE_NORMAL,ROLE_SUPER"/>
         <security:form-login
                 login-page="/login.html"
-                default-target-url="/index.html"
-                authentication-failure-url="/login.html"
+                default-target-url="/admin/index.html"
+                authentication-failure-url="/login.html#?error=true"
                 always-use-default-target="true"/>
         <!--跨域请求安全防范guanbi-->
         <security:csrf disabled="true"/>
@@ -45,17 +41,18 @@
     </security:http>
     <!--配置认证管理器-->
     <security:authentication-manager>
-        <security:authentication-provider user-service-ref="adminServiceDetail" >
+        <security:authentication-provider user-service-ref="adminServiceDetail">
          <!--   <security:password-encoder ref="passwordEncoder"/>-->
         </security:authentication-provider>
     </security:authentication-manager>
 
-
+    <dubbo:application name="huxiaotian_manager_web" />
+    <dubbo:registry address="zookeeper://192.168.25.129:2181"/>
+    <dubbo:annotation package="com.yingxiaotian.service" />
 
 
     <!--配置加密算法-->
   <!--  <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>-->
 
-    <bean id="adminServiceDetail" class="com.yingxiaotian.manager.AdminDetailServiceImpl"/>
-
+    <bean id="adminServiceDetail" class="com.yingxiaotian.service.AdminDetailServiceImpl"/>
 </beans>

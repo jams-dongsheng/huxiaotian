@@ -10,14 +10,19 @@
         <module name="huxiaotian_pojo" />
         <module name="huxiaotian_dao" />
         <module name="huxiaotian_common" />
+        <module name="huxiaotian-room-interface" />
         <module name="huxiaotian_manager_web" />
-        <module name="huxiaotian_room_web" />
+        <module name="huxiaotian-user-interface" />
         <module name="huxiaotian_admin_service" />
-        <module name="huxiaotian_room_service" />
-        <module name="huxiaotian_room_interface" />
+        <module name="huxiaotian-room-service" />
+        <module name="huxiaotian-user-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="huxiaotian-room-interface" target="1.8" />
+      <module name="huxiaotian-room-service" target="1.8" />
+      <module name="huxiaotian-user-interface" target="1.8" />
+      <module name="huxiaotian-user-service" target="1.8" />
       <module name="huxiaotian_admin_interface" target="1.8" />
       <module name="huxiaotian_admin_service" target="1.8" />
       <module name="huxiaotian_common" target="1.8" />

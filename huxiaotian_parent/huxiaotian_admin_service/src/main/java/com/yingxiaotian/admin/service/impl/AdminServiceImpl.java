@@ -8,10 +8,13 @@ import com.yingxiaotian.mapper.YxtAdminMapper;
 import com.yingxiaotian.pojo.PageResult;
 import com.yingxiaotian.pojo.YxtAdmin;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Transactional
 public class AdminServiceImpl implements AdminService {
 
     @Autowired
@@ -22,7 +25,7 @@ public class AdminServiceImpl implements AdminService {
     public List<YxtAdmin> findAll() {
         List<YxtAdmin> adminList = adminMapper.selectByExample(null);
         List<YxtAdmin> admins = new ArrayList<>();
-        if (adminList!=null&&adminList.size()!=0){
+        if (adminList!=null&&adminList.size()>0){
             for (YxtAdmin admin : adminList) {
                 if ("NORMAL".equals(admin.getRole())){
                     admins.add(admin);

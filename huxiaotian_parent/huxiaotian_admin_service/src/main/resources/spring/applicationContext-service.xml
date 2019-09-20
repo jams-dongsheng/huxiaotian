@@ -9,7 +9,7 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<dubbo:protocol name="dubbo" port="20897"></dubbo:protocol>
-	<dubbo:application name="huxiaotian-admin-service"/>
+	<dubbo:application name="huxiaotian_admin_service"/>
 	<dubbo:registry address="zookeeper://192.168.25.129:2181"/>
 	<dubbo:annotation package="com.yingxiaotian.admin.service.impl"/>
 

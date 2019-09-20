@@ -2,9 +2,8 @@ package com.yingxiaotian.mapper;
 
 import com.yingxiaotian.pojo.YxtAdmin;
 import com.yingxiaotian.pojo.YxtAdminExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface YxtAdminMapper {
     long countByExample(YxtAdminExample example);
